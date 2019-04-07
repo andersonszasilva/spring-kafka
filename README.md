@@ -4,10 +4,10 @@ Projeto de conclusão da disciplina de microservices FIAP
 
 <h2>Configurações:</h2>
 Baixa imagem docker do mysql 5.6
+
 ```
 docker pull mysql/mysql-server:5.6
 ```
-
 Cria container com mysql e configura senha root
 ```
 docker run --name mysql-tcp -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=databasetcp -d mysql:5.6
