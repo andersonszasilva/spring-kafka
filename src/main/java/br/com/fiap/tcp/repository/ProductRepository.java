@@ -2,18 +2,19 @@ package br.com.fiap.tcp.repository;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import br.com.fiap.tcp.model.Product;
-import br.com.fiap.tcp.model.Tag;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends PagingAndSortingRepository<Product, Long> {
 
-	List<Product> findByCategory(@Param("category") String category);
+	List<Product> findByCategory(String category);
 	
-	List<Product> findByTags(@Param("tags") List<Tag> tags);
+	@Query("select p from Product p where p.description like %?1% or p.category like %?1%")
+	List<Product> findByTag(String tag);
+	
 
 }

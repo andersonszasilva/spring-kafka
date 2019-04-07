@@ -11,48 +11,48 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fiap.tcp.model.Product;
-import br.com.fiap.tcp.model.Tag;
 import br.com.fiap.tcp.repository.ProductRepository;
-import br.com.fiap.tcp.repository.TagRepository;
 
 @RestController
 public class ProductController {
-	
+
 	@Autowired
 	private ProductRepository productRepository;
-	private TagRepository tagRepository;
-	
-	@GetMapping(value= "/populaBase")
+
+	@GetMapping(value= "/loadProducts")
 	public List<Product> populaBase() {
-		List<Product> products = Arrays.asList(new Product("GTA", "game"),
-				     new Product("Fifa 19", "game"),
-				     new Product("Iphone 8", "game"));
+		List<Product> products = (List<Product>) productRepository.findAll();
 		
-		for (Product product : products) {
-			productRepository.save(product);
+		if(products.isEmpty()) {
+			products = Arrays.asList(new Product("Jogo GTA V", "jogos"),
+					new Product("Jogo Fifa 19", "jogos"),
+					new Product("Jogo Assassins creed", "jogos"),
+					new Product("Livro O Poder do Hábito", "livros"));
+
+			products.forEach(productRepository::save);
 		}
-		
-		return (List<Product>) productRepository.findAll();
-		
+
+		return products;
+
 	}
 
 	@GetMapping(value= "/products")
 	public List<Product> getProductsByCategory(@RequestParam(value="category") String category) {
-		
+
 		return productRepository.findByCategory(category);
 	}
-	
+
 	@GetMapping(value= "/product/{id}")
 	public Optional<Product> getProductById(@PathVariable(value="id") Long id) {
-		
+
 		return productRepository.findById(id);
 	}
-	
-	@GetMapping(value= "/products")
+
+	@GetMapping(value= "/products/tags")
 	public List<Product> getProductByTag(@RequestParam(value="tag") String tag) {
-		
-		return productRepository.findByTags(tags);
+
+		return productRepository.findByTag(tag);
 	}
-	
-	
+
+
 }
