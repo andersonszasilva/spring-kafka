@@ -13,7 +13,7 @@ Criar container com mysql e criar database e senha para usuário root
 docker run --name mysql-tcp -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=databasetcp -d mysql:5.6
 ```
 
-Construir imagem com os serviços(Observação este comando é necessário dentro do path do projeto, já que, ele procura o arquivo DockerFile)
+Construir imagem com os serviços (Observação: este comando é necessário dentro do path do projeto, já que, ele procura o arquivo DockerFile)
 ```
 docker build -f DockerFile -t tcp-fiap .
 ```
