@@ -2,7 +2,7 @@
 
 Projeto de conclusão da disciplina de microservices FIAP
 
-Configuraçõed
+<h2>Configurações:<h2>
 Baixa imagem docker do mysql 5.6
 ```
 docker pull mysql/mysql-server:5.6
