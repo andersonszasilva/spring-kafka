@@ -25,7 +25,7 @@ docker build -f DockerFile -t app .
 
 Rodar container com os serviços e criar link para container do mysql
 ```
-docker run it -p 8080:8080 --name app --network production-network -d app
+docker run -p 8080:8080 --name app --network production-network -d app
 ```
 
 
