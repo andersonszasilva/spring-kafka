@@ -25,25 +25,9 @@ docker build -f DockerFile -t app .
 
 Rodar container com os serviços e criar link para container do mysql
 ```
-docker run it -p 8080:8080 --name app --network production-network -d app
+docker run -p 8080:8080 --name app --network production-network -d app
 ```
 
-Baixar Apache kafka
-
-Depois de extraido rode o comando abaixo:
-
-Once you download Kafka, you can issue a command to start ZooKeeper which is used by Kafka to store metadata.
-
-```
-.\zookeeper-server-start.bat ..\..\config\zookeeper.properties
-```
-
-Next, we need to start the Kafka cluster locally by issuing the below command.
-
-```
-.\kafka-server-start.bat ..\..\config\server.properties
-
-```
 
 <h2>Configurações - Criando com Docker composer</h2>
 
