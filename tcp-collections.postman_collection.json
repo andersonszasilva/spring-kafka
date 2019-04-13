@@ -6,89 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Visualizar os produtos por categoria",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/products?category=jogos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"products"
-					],
-					"query": [
-						{
-							"key": "category",
-							"value": "jogos"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Visualizar detalhes do produto",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/product/3",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"product",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Buscar um produto por palavra-chave",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/products/tags?tag=jogo",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"products",
-						"tags"
-					],
-					"query": [
-						{
-							"key": "tag",
-							"value": "jogo"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Insere Produtos na pase",
 			"request": {
 				"method": "GET",
@@ -129,6 +46,234 @@
 					"port": "8080",
 					"path": [
 						"loadIssues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visualizar os produtos por gênero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/products?category=jogos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "jogos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visualizar detalhes do produto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/2/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"2",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar produto na lista de desejos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/wish-list-add/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"wish-list-add",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar um produto por palavra-chave",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/tags?tag=jogo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"tags"
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "jogo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar produtos mais vistos por categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/more-seen-products?category=jogos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"more-seen-products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "jogos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar chamado técnico com kafka",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"description\": \"Não estou conseguindo efetuar a compra, porra\"\n }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/issues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Acompanhar os dados do seu chamado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/issues?protocol=0981350f-2049-4312-8dac-0e7acfe9c61c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"issues"
+					],
+					"query": [
+						{
+							"key": "protocol",
+							"value": "0981350f-2049-4312-8dac-0e7acfe9c61c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calcular frete de uma compra",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/frete?cep=09550250",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"frete"
+					],
+					"query": [
+						{
+							"key": "cep",
+							"value": "09550250"
+						}
 					]
 				}
 			},

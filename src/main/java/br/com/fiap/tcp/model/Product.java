@@ -13,6 +13,7 @@ public class Product {
 	private Long id;
 	private String description;
 	private String category;
+	private Integer viewQuantities = 0;
 	
 	public Product() { }
 	
@@ -38,6 +39,14 @@ public class Product {
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	
+	public Integer getViewQuantities() {
+		return viewQuantities;
+	}
+	
+	public void setViewQuantities(Integer viewQuantities) {
+		this.viewQuantities = viewQuantities;
 	}
 	
 

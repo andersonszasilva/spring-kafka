@@ -8,5 +8,7 @@ import br.com.fiap.tcp.model.Issue;
 @Repository
 public interface IssueRepository extends PagingAndSortingRepository<Issue, Long> {
 
+	Issue findByProtocolo(String protocolo);
+
 
 }
