@@ -3,7 +3,6 @@ package br.com.fiap.tcp.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,21 +12,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import br.com.fiap.tcp.model.Frete;
+import br.com.fiap.tcp.model.Freight;
 import br.com.fiap.tcp.model.Product;
 import br.com.fiap.tcp.repository.ProductRepository;
+import br.com.fiap.tcp.service.FreightService;
 
 @RestController
 public class ProductController {
 
 	@Autowired
 	private ProductRepository productRepository;
+	@Autowired
+	private FreightService freightService;
 	private static List<Optional<Product>> wishist = new ArrayList<>();
 
 	@GetMapping(value= "/loadProducts")
@@ -102,36 +102,15 @@ public class ProductController {
 		return productRepository.findByTag(tag);
 	}
 	
-	@GetMapping(value= "/products/frete")
-	public Frete consultaCEP(@RequestParam(value="cep") String cep) throws JsonParseException, JsonMappingException, IOException {
-	   String REST_URI = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx/CalcPreco?"
-			   +"nCdEmpresa="
-			   +"&sDsSenha="
-               +"&nCdServico=41106" +"&sCepOrigem=02161020"
-               +"&sCepDestino=09550250"
-               +"&nVlPeso=1"
-               +"&nCdFormato=1"
-               +"&nVlComprimento=20"
-               +"&nVlAltura=20"
-               +"&nVlLargura=20"
-               +"&nVlDiametro=10"
-               +"&sCdMaoPropria=S"
-               +"&nVlValorDeclarado=100"
-               +"&sCdAvisoRecebimento=N";
-	   
-	   System.out.println(REST_URI);
-	   
-	   RestTemplate restTemplate = new RestTemplate();
-       String xml = restTemplate.getForObject(REST_URI, String.class);
+	@GetMapping(value= "/products/freight")
+	public Freight consultaCEP(@RequestParam(value="postalCode") String postalCode) throws JsonParseException, JsonMappingException, IOException {
+	   Freight freight = freightService.calculateFreight(postalCode);
        
-       System.out.println(xml);
-       
-       XmlMapper xmlMapper = new XmlMapper();
-       Frete frete = xmlMapper.readValue(xml, Frete.class);
-       
-	   return frete;	
+	   return freight;	
 
 	}
+
+	
 	
 
 }

@@ -1,11 +1,30 @@
 package br.com.fiap.tcp.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
+@JacksonXmlRootElement(localName="cResultado")
+public class Freight {
+
+	@JacksonXmlElementWrapper(localName = "Servicos")
+	private List<Result> results = new ArrayList<>();
+	
+	public List<Result> getResults() {
+		return results;
+	}
+	
+	public void setResults(List<Result> results) {
+		this.results = results;
+	}
+
+}
+
 @JacksonXmlRootElement(localName="cServico")
-public class Result {
+class Result {
 
 	@JacksonXmlProperty(localName="Codigo")
 	private String codigo;
@@ -76,7 +95,4 @@ public class Result {
 	public void setValorSemAdicionais(String valorSemAdicionais) {
 		this.valorSemAdicionais = valorSemAdicionais;
 	}
-
-
-
 }

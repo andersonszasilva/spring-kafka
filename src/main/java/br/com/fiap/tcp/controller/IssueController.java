@@ -29,14 +29,14 @@ public class IssueController {
 		this.producer = producer;
 	}
 
-	@PostMapping(value = "/chamados")
-	public ResponseEntity<Message> criaChamadoComKafka(@RequestBody Issue chamado) {
+	@PostMapping(value = "/issues")
+	public ResponseEntity<Message> createIssueWithKafka(@RequestBody Issue issue) {
 		Message mensagem = null;
 		try {
 			UUID uuid = UUID.randomUUID();
-			chamado.setProtocol(uuid.toString());
-			this.producer.sendMessageIssue(chamado);
-			mensagem = new Message("Seu chamado foi criado com sucesso. Anote o seu protocolo: " + chamado.getProtocol());
+			issue.setProtocol(uuid.toString());
+			this.producer.sendMessageIssue(issue);
+			mensagem = new Message("Seu chamado foi criado com sucesso. Anote o seu protocolo: " + issue.getProtocol());
 			return new ResponseEntity<Message>(mensagem, HttpStatus.CREATED);
 
 		} catch (Exception e) {
@@ -47,9 +47,9 @@ public class IssueController {
 
 	}
 	
-	@GetMapping(value= "/chamados")
-	public Issue procuraChamadoPorProtocolo(@RequestParam(value="protocolo") String protocolo) {
-		Issue issue = issueRepository.findByProtocolo(protocolo);
+	@GetMapping(value= "/issues")
+	public Issue findByIssueByProtocol(@RequestParam(value="protocol") String protocol) {
+		Issue issue = issueRepository.findByProtocol(protocol);
 		return issue;
 	}
 

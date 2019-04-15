@@ -17,6 +17,7 @@ public class Issue implements Serializable {
 	private Long id;
 	private String description;
 	private String protocol;
+	private String status = "Criado";
 	
 	public Issue() {}
 	
@@ -44,6 +45,10 @@ public class Issue implements Serializable {
 	
 	public String getProtocol() {
 		return protocol;
+	}
+	
+	public String getStatus() {
+		return status;
 	}
 	
 	
