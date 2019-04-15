@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ed6163b1-0695-4156-9237-674c020dd4d4",
+		"_postman_id": "0b4fd5ef-4df3-4e5b-a6c7-c0f8c8fb6351",
 		"name": "tcp-collections",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -23,29 +23,6 @@
 					"port": "8080",
 					"path": [
 						"loadProducts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Insere chamados na base",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/loadIssues",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"loadIssues"
 					]
 				}
 			},
@@ -115,7 +92,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/products/wish-list-add/3",
+					"raw": "http://localhost:8080/products/wish-list-add/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -124,7 +101,7 @@
 					"path": [
 						"products",
 						"wish-list-add",
-						"3"
+						"2"
 					]
 				}
 			},
@@ -204,7 +181,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " {\n        \"description\": \"Não estou conseguindo efetuar a compra, porra\"\n }"
+					"raw": " {\n        \"description\": \"Não estou conseguindo efetuar a compra\"\n }"
 				},
 				"url": {
 					"raw": "http://localhost:8080/issues",
@@ -230,7 +207,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/issues?protocol=0981350f-2049-4312-8dac-0e7acfe9c61c",
+					"raw": "http://localhost:8080/issues?protocol=dbd3b045-b488-4082-a906-5308f4e99d44",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -242,7 +219,7 @@
 					"query": [
 						{
 							"key": "protocol",
-							"value": "0981350f-2049-4312-8dac-0e7acfe9c61c"
+							"value": "dbd3b045-b488-4082-a906-5308f4e99d44"
 						}
 					]
 				}
@@ -259,7 +236,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/products/frete?cep=09550250",
+					"raw": "http://localhost:8080/products/freight?postalCode=09550250",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -267,11 +244,11 @@
 					"port": "8080",
 					"path": [
 						"products",
-						"frete"
+						"freight"
 					],
 					"query": [
 						{
-							"key": "cep",
+							"key": "postalCode",
 							"value": "09550250"
 						}
 					]
