@@ -1,5 +1,7 @@
 package br.com.fiap.tcp.service;
 
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,8 @@ public class IssueProducer {
 	public void sendMessageIssue(Issue issue) {
 		logger.info(String.format("$$ -> Producing message --> %s", issue.getDescription()));
 		Gson gson = new Gson();
+		UUID uuid = UUID.randomUUID();
+		issue.setProtocol(uuid.toString());
 		String json = gson.toJson(issue);
 		
 		this.kafkaTemplate.send(TOPIC_ISSUES, json);

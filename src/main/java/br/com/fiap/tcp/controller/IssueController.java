@@ -33,8 +33,6 @@ public class IssueController {
 	public ResponseEntity<Message> createIssueWithKafka(@RequestBody Issue issue) {
 		Message mensagem = null;
 		try {
-			UUID uuid = UUID.randomUUID();
-			issue.setProtocol(uuid.toString());
 			this.producer.sendMessageIssue(issue);
 			mensagem = new Message("Seu chamado foi criado com sucesso. Anote o seu protocolo: " + issue.getProtocol());
 			return new ResponseEntity<Message>(mensagem, HttpStatus.CREATED);
