@@ -1,4 +1,4 @@
-# TCP - Trabalho de Conclusão da Disciplina - FIAP
+# TCD - Trabalho de Conclusão da Disciplina - FIAP
 
 Projeto de conclusão da disciplina de microservices FIAP
 
