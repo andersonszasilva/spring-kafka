@@ -1,4 +1,4 @@
-package br.com.fiap.tcp.service;
+package br.com.fiap.tcdamazon.service;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import br.com.fiap.tcp.model.Freight;
+import br.com.fiap.tcdamazon.model.Freight;
 
 @Service
 public class FreightService {

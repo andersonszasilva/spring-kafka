@@ -9,8 +9,8 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.fiap.tcp</groupId>
-	<artifactId>tcp</artifactId>
+	<groupId>br.com.fiap.tcdamazon</groupId>
+	<artifactId>tcdamazon</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>tcp</name>
 	<description>Projeto de conclusão da disciplina de microservices FIAP</description>
@@ -81,7 +81,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>tcp-fiap</finalName>
+					<finalName>tcdamazon</finalName>
 				</configuration>
 			</plugin>
 		</plugins>

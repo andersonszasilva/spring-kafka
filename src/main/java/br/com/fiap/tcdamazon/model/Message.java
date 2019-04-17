@@ -1,4 +1,4 @@
-package br.com.fiap.tcp.model;
+package br.com.fiap.tcdamazon.model;
 
 public class Message {
 

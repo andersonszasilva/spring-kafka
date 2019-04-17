@@ -1,4 +1,4 @@
-package br.com.fiap.tcp.controller;
+package br.com.fiap.tcdamazon.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-import br.com.fiap.tcp.model.Freight;
-import br.com.fiap.tcp.model.Product;
-import br.com.fiap.tcp.repository.ProductRepository;
-import br.com.fiap.tcp.service.FreightService;
+import br.com.fiap.tcdamazon.model.Freight;
+import br.com.fiap.tcdamazon.model.Product;
+import br.com.fiap.tcdamazon.repository.ProductRepository;
+import br.com.fiap.tcdamazon.service.FreightService;
 
 @RestController
 public class ProductController {

@@ -1,4 +1,4 @@
-package br.com.fiap.tcp.service;
+package br.com.fiap.tcdamazon.service;
 
 import java.util.UUID;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 
-import br.com.fiap.tcp.model.Issue;
+import br.com.fiap.tcdamazon.model.Issue;
 
 @Service
 public class IssueProducer {

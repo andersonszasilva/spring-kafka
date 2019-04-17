@@ -1,4 +1,4 @@
-package br.com.fiap.tcp.service;
+package br.com.fiap.tcdamazon.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 
-import br.com.fiap.tcp.model.Issue;
-import br.com.fiap.tcp.repository.IssueRepository;
+import br.com.fiap.tcdamazon.model.Issue;
+import br.com.fiap.tcdamazon.repository.IssueRepository;
 
 @Service
 public class IssueConsumer {

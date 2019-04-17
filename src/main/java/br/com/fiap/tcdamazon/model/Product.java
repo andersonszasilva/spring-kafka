@@ -1,6 +1,4 @@
-package br.com.fiap.tcp.model;
-
-import java.io.Serializable;
+package br.com.fiap.tcdamazon.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,27 +6,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Issue implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String description;
-	private String protocol;
-	private String status = "Criado";
+	private String category;
+	private Integer viewQuantities = 0;
 	
-	public Issue() {}
+	public Product() { }
 	
-	public Issue(String description) {
+	public Product(String description, String category) {
 		this.description = description;
+		this.category = category;
 	}
 
 	public Long getId() {
 		return id;
 	}
-	
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -38,18 +34,20 @@ public class Issue implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public void setProtocol(String protocol) {
-		this.protocol = protocol;
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
-	public String getProtocol() {
-		return protocol;
+	public Integer getViewQuantities() {
+		return viewQuantities;
 	}
 	
-	public String getStatus() {
-		return status;
+	public void setViewQuantities(Integer viewQuantities) {
+		this.viewQuantities = viewQuantities;
 	}
 	
-	
+
 }

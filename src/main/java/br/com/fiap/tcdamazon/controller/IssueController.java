@@ -1,6 +1,4 @@
-package br.com.fiap.tcp.controller;
-
-import java.util.UUID;
+package br.com.fiap.tcdamazon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.tcp.model.Issue;
-import br.com.fiap.tcp.model.Message;
-import br.com.fiap.tcp.repository.IssueRepository;
-import br.com.fiap.tcp.service.IssueProducer;
+import br.com.fiap.tcdamazon.model.Issue;
+import br.com.fiap.tcdamazon.model.Message;
+import br.com.fiap.tcdamazon.repository.IssueRepository;
+import br.com.fiap.tcdamazon.service.IssueProducer;
 
 @RestController
 public class IssueController {

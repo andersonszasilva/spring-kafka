@@ -1,4 +1,4 @@
-package br.com.fiap.tcp.repository;
+package br.com.fiap.tcdamazon.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.fiap.tcp.model.Product;
+import br.com.fiap.tcdamazon.model.Product;
 
 @Repository
 public interface ProductRepository extends PagingAndSortingRepository<Product, Long> {

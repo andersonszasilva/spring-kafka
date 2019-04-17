@@ -1,9 +1,9 @@
-package br.com.fiap.tcp.repository;
+package br.com.fiap.tcdamazon.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.fiap.tcp.model.Issue;
+import br.com.fiap.tcdamazon.model.Issue;
 
 @Repository
 public interface IssueRepository extends PagingAndSortingRepository<Issue, Long> {

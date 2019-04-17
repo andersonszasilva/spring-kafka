@@ -1,4 +1,4 @@
-package br.com.fiap.tcp.model;
+package br.com.fiap.tcdamazon.model;
 
 import java.util.ArrayList;
 import java.util.List;

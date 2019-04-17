@@ -1,4 +1,4 @@
-package br.com.fiap.tcp;
+package br.com.fiap.tcdamazon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
