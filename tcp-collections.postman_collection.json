@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "7341cc0a-2b7d-43cc-834e-da5512c3114d",
+		"name": "tcp-collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar chamado técnico com kafka",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"description\": \"Não estou conseguindo efetuar a compra\"\n }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/issues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Acompanhar os dados do seu chamado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/issues?protocol=dbd3b045-b488-4082-a906-5308f4e99d44",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"issues"
+					],
+					"query": [
+						{
+							"key": "protocol",
+							"value": "dbd3b045-b488-4082-a906-5308f4e99d44"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
