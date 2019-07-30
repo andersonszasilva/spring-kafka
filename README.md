@@ -1,16 +1,14 @@
-# TCD - Trabalho de Conclusão da Disciplina - FIAP
+# Spring Boot with Kafka
 
-Projeto de conclusão da disciplina de microservices FIAP
+<h2>Configuration - Creating with Docker Composer</h2>
 
-<h2>Configurações - Criando com Docker composer</h2>
-
-Construindo pelo arquivo docker-composer.yaml
+Build the file docker-composer.yaml
 
 ```
 docker-compose build
 ```
 
-Subindo containers
+Up containers
 ```
 docker-compose up -d
 ```
