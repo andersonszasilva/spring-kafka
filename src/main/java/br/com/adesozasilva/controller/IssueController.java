@@ -1,4 +1,4 @@
-package br.com.fiap.tcdamazon.controller;
+package br.com.adesozasilva.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.tcdamazon.model.Issue;
-import br.com.fiap.tcdamazon.model.Message;
-import br.com.fiap.tcdamazon.repository.IssueRepository;
-import br.com.fiap.tcdamazon.service.IssueProducer;
+import br.com.adesozasilva.model.Issue;
+import br.com.adesozasilva.model.Message;
+import br.com.adesozasilva.repository.IssueRepository;
+import br.com.adesozasilva.service.IssueProducer;
 
 @RestController
 public class IssueController {

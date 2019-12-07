@@ -1,9 +1,9 @@
-package br.com.fiap.tcdamazon.repository;
+package br.com.adesozasilva.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.fiap.tcdamazon.model.Issue;
+import br.com.adesozasilva.model.Issue;
 
 @Repository
 public interface IssueRepository extends PagingAndSortingRepository<Issue, Long> {

@@ -1,4 +1,4 @@
-package br.com.fiap.tcdamazon.model;
+package br.com.adesozasilva.model;
 
 public class Message {
 

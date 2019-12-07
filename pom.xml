@@ -9,8 +9,8 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.fiap.tcdamazon</groupId>
-	<artifactId>tcdamazon</artifactId>
+	<groupId>br.com.adesozasilva</groupId>
+	<artifactId>spring-rest-with-java</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>tcp</name>
 	<description>Projeto de conclusão da disciplina de microservices FIAP</description>
